@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Which Library Persona Are You?</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Poppins & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- WELCOME SCREEN (entire viewport, background.png) -->
+  <div id="welcome-screen" class="screen bg-welcome active">
+    <!-- Larger box in middle, more spacing -->
+    <div class="screen-content welcome-content">
+      <h1>Which Library Persona Are You?</h1>
+      <p>Take this 30-second quiz to find out what kind of library student you are!</p>
+      <p class="sub">⏳ Takes less than a minute!</p>
+      <!-- Bigger "Start" button -->
+      <button id="start-btn" class="btn teal-btn pill-btn">Start</button>
+    </div>
+  </div>
+
+  <!-- QUIZ SCREEN (entire viewport, background.png) -->
+  <div id="quiz-screen" class="screen bg-quiz">
+    <div class="screen-content quiz-container">
+      <!-- Smooth progress bar -->
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <h2 id="question-text" class="heading"></h2>
+      <div id="answers-container" class="answers-container"></div>
+      <button id="next-btn" class="btn teal-btn pill-btn hidden">Next</button>
+      <p id="progress-text" class="progress"></p>
+    </div>
+  </div>
+
+  <!-- RESULT SCREEN (entire viewport, cream background) -->
+  <div id="result-screen" class="screen bg-result">
+    <div class="screen-content result-content">
+      <img src="assets/banner.jpeg" alt="Yushu Banner" class="banner-img" />
+      <h2>Your Library Persona:</h2>
+      <h3 id="result-persona" class="persona-heading"></h3>
+      <p id="result-desc" class="result-desc"></p>
+
+      <!-- Confetti container (one-time) -->
+      <div id="confetti-container"></div>
+
+      <!-- 4 share icons (X, WhatsApp, Telegram, Email) -->
+      <div class="share-row">
+        <p>Share your result:</p>
+        <img src="assets/icon-x.png" alt="X" class="share-icon" id="share-x" />
+        <img src="assets/icon-whatsapp.png" alt="WhatsApp" class="share-icon" id="share-whatsapp" />
+        <img src="assets/icon-telegram.png" alt="Telegram" class="share-icon" id="share-telegram" />
+        <img src="assets/icon-email.png" alt="Email" class="share-icon" id="share-email" />
+      </div>
+
+      <!-- "Vote Yushu!" pinned at bottom, fullwidth -->
+      <button id="vote-btn" class="btn orange-btn pill-btn vote-fullwidth">Vote Yushu!</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

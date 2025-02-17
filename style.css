@@ -1,0 +1,251 @@
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', 'Montserrat', sans-serif;
+  overflow: auto;
+}
+
+/* FULL SCREEN SCREENS */
+.screen {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 0.5s forwards;
+}
+.screen.active {
+  display: flex;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* WELCOME & QUIZ BACKGROUND */
+.bg-welcome {
+  background: url('assets/background.png') no-repeat center center fixed;
+  background-size: cover;
+}
+.bg-quiz {
+  background: url('assets/background.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* RESULT SCREEN CREAM BG */
+.bg-result {
+  background: #FFF8ED;
+}
+
+/* SCREEN CONTENT: bigger box in the middle */
+.screen-content {
+  width: 90%;
+  max-width: 600px; /* bigger, more spaced out */
+  margin: 0 auto;
+}
+
+/* WELCOME PAGE BOX - More spacing */
+.welcome-content {
+  background-color: rgba(255,255,255,0.85);
+  padding: 40px;  /* bigger padding */
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.welcome-content h1 {
+  font-size: 22px; /* bigger heading */
+  margin-bottom: 15px;
+}
+.welcome-content p {
+  margin-bottom: 10px; /* spacing for each paragraph */
+}
+#start-btn {
+  font-size: 18px; /* bigger button text */
+  padding: 14px 25px; /* more padding for bigger button */
+}
+
+/* QUIZ CONTAINER */
+.quiz-container {
+  background-color: rgba(255,255,255,0.85);
+  border-radius: 8px;
+  padding: 20px;
+  animation: slideUp 0.5s forwards;
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* HEADINGS & TEXT */
+.heading {
+  font-size: 20px;
+  color: #333333;
+  margin-bottom: 15px;
+}
+.answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.progress {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #8B5E34;
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background-color: #2EC4B6;
+  transition: width 0.5s ease-in-out;
+}
+
+/* RESULT CONTENT */
+.result-content {
+  background-color: rgba(255,255,255,0.85);
+  padding: 20px;
+  border-radius: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pinned "Vote Yushu!" at bottom */
+}
+.banner-img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+.persona-heading {
+  font-size: 22px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+.result-desc {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+/* CONFETTI (one-time) */
+#confetti-container {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  display: none;
+}
+
+/* SHARE ROW */
+.share-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.share-row p {
+  font-size: 14px;
+  color: #333333;
+}
+.share-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.2s;
+  object-fit: contain;
+}
+.share-icon:hover {
+  transform: scale(1.1);
+}
+
+/* PILL BUTTONS */
+.btn {
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* TEAL THEME (Start/Next) */
+.teal-btn {
+  background-color: #2EC4B6;
+  color: #FFFFFF;
+}
+.teal-btn:hover {
+  background-color: #27B2A6;
+  transform: scale(1.05);
+}
+
+/* ORANGE THEME (Vote Yushu) */
+.orange-btn {
+  background-color: #FF5722;
+  color: #FFFFFF;
+}
+.orange-btn:hover {
+  background-color: #E64A19;
+  transform: scale(1.05);
+}
+
+/* Fullwidth for "Vote Yushu!" pinned at bottom */
+.vote-fullwidth {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* ANSWER BUTTONS (Pill style), no single-word lines */
+.answer-btn {
+  background-color: #FFFFFF;
+  color: #555555;
+  border: 2px solid #2EC4B6;
+  border-radius: 30px;
+  padding: 12px;
+  text-align: center;
+  font-size: 15px;
+  transition: 0.2s;
+  white-space: normal;
+  max-width: 320px;
+  margin: 0 auto;
+}
+.answer-btn:hover {
+  background-color: #2EC4B6;
+  color: #FFFFFF;
+  transform: scale(1.03);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* HIDDEN */
+.hidden {
+  display: none;
+}
