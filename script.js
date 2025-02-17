@@ -204,7 +204,7 @@ function showResult() {
 
 // VOTE YUSHU
 voteBtn.addEventListener('click', () => {
-  window.open("https://engage.luu.org.uk/election/V2CBV/leadluu-2025/position/2CX46/equality-liberation-officer", "_blank");
+  window.open("https://engage.luu.org.uk/elections/vote-now", "_blank");
 });
 
 // SHARE ICONS (X, WhatsApp, Telegram, Email)
